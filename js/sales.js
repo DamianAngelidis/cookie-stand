@@ -45,7 +45,7 @@ var storeAirport = {
     minCust: 3,
     maxCust: 24,
     avgCook: 1.2,
-    length: 16,
+    length: 15,
     cookieNumber: function() {
         var report = [];
         var total = 0;
@@ -60,28 +60,28 @@ var storeAirport = {
     render: function(){    
         var liEl = document.createElement('li');
         liEl.textContent = '' + this.name;
+        ulEl.appendChild(liEl);
 
         for(var i = 0; i < this.cookieNumber()[0].length; i++) {
             liEl = document.createElement('li');
             liEl.textContent = liEl.textContent + `${hours[i]}:  ${this.cookieNumber()[0][i]} cookies` + '\n';
+            ulEl.appendChild(liEl);
             console.log(liEl.textContent, hours[i], this.cookieNumber()[0][i]);
         }
 
         liEl = document.createElement('li');
         liEl.textContent = liEl.textContent + `Total: ${this.cookieNumber()[1]}`;
-        liEl = document.createElement('li');
-        liEl.textContent = liEl.textContent + ' ';
         ulEl.appendChild(liEl); 
     }
 }
 
 
 var storeCenter  = {
-    name: '1st and Pike',
+    name: 'Seattle Center',
     minCust: 11,
     maxCust: 28,
     avgCook: 3.7,
-    length: 16,
+    length: 15,
     cookieNumber: function() {
         var report = [];
         var total = 0;
@@ -113,12 +113,12 @@ var storeCenter  = {
 
 
 var storeCapital = {
-    name: '1st and Pike',
+    name: 'Capitol Hill',
     minCust: 20,
     maxCust: 38,
     avgCook: 2.3,
     data: new Array,
-    length: 16,
+    length: 15,
     cookieNumber: function() {
         var report = [];
         var total = 0;
@@ -150,11 +150,11 @@ var storeCapital = {
 
 
 var storeAlki = {
-    name: '1st and Pike',
+    name: 'Alki',
     minCust: 2,
     maxCust: 16,
     avgCook: 4.6,
-    length: 16,
+    length: 15,
     cookieNumber: function() {
         var report = [];
         var total = 0;
