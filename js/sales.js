@@ -1,3 +1,4 @@
+
 'use strict';
 
 var ulEl = document.getElementById('cookies-sold');
