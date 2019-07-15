@@ -1,3 +1,4 @@
+
 'use strict';
 
 var ulEl = document.getElementById('cookies-sold');
@@ -55,6 +56,13 @@ var storeAirport = {
 }
 
 var storeCenter  = {
+=======
+    cookieNumber: function() {
+        return Math.random() * (maxCust - minCust) + minCust;
+    }
+}
+
+var storeCenter  = {
     name: '1st and Pike',
     minCust: 11,
     maxCust: 28,
@@ -80,6 +88,12 @@ var storeCenter  = {
 }
 
 var storeCapital = {
+    cookieNumber: function() {
+        return Math.random() * (maxCust - minCust) + minCust;
+    }
+}
+
+storeCapitol = {
     name: '1st and Pike',
     minCust: 20,
     maxCust: 38,
@@ -105,10 +119,17 @@ var storeCapital = {
 }
 
 var storeAlki = {
+    cookieNumber: function() {
+        return Math.random() * (maxCust - minCust) + minCust;
+    }
+}
+
+storeALki = {
     name: '1st and Pike',
     minCust: 2,
     maxCust: 16,
     avgCook: 4.6,
+
     data: new Array,
     length: 16,
     cookieNumber: function() {
@@ -132,5 +153,5 @@ var storeAlki = {
 var diffStores = [storePike, storeAirport, storeCenter, storeCapital, storeAlki];
 
 for(var i=0;i<diffStores.length;i++) {
-    diffStores[i].render();
+    diffStores[i].render();       
 }
