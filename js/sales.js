@@ -3,155 +3,190 @@
 
 var ulEl = document.getElementById('cookies-sold');
 
+var hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm',]
 
 var storePike = {
     name: '1st and Pike',
     minCust: 23,
     maxCust: 65,
     avgCook: 6.3,
-    data: new Array,
-    length: 16,
+    length: 15,
     cookieNumber: function() {
-            var report = '';
-            var total = 0;
-            for(i=0;i<length;i++) {
-                data[i] = avgCook * (Math.random() * (maxCust - minCust) + minCust);
-                report += `${i + 6}am: ${data[i]} cookies \n`; 
-                total += data[i];
-                console.log(data[i], report, total)
-            }   
-        report += `Total: ${total} cookies`;
-        console.log(report);   
+        var report = [];
+        var total = 0;
+        for(var i=0;i<this.length;i++) {
+            report[i] = Math.round(this.avgCook * (Math.random() * (this.maxCust - this.minCust) + this.minCust));
+            total += report[i];
+        }
+        console.log(report, total);
+        return [report, total];
+       
     },
     render: function(){    
-          var liEl = document.createElement('li');
-          liEl.textContent = this.type;
-          ulEl.appendChild(liEl);
-      }
+        var liEl = document.createElement('li');
+        liEl.textContent = '' + this.name;
+        ulEl.appendChild(liEl);
+
+        for(var i = 0; i < this.cookieNumber()[0].length; i++) {
+            liEl = document.createElement('li');
+            liEl.textContent = liEl.textContent + `${hours[i]}:  ${this.cookieNumber()[0][i]} cookies` + '\n';
+            ulEl.appendChild(liEl);
+            console.log(liEl.textContent, hours[i], this.cookieNumber()[0][i]);
+        }
+
+        liEl = document.createElement('li');
+        liEl.textContent = liEl.textContent + `Total: ${this.cookieNumber()[1]}`;
+        ulEl.appendChild(liEl); 
+    }
 }
+
 
 var storeAirport = {
     name: 'SeaTac Airport',
     minCust: 3,
     maxCust: 24,
     avgCook: 1.2,
-    data: new Array,
-    length: 16,
+    length: 15,
     cookieNumber: function() {
-        var report = '';
+        var report = [];
         var total = 0;
-        for(i=0;i<length;i++) {
-            data[i] = avgCook * (Math.random() * (maxCust - minCust) + minCust);
-            report += `${i + 6}am: ${data[i]} cookies \n`; 
-            total += data[i];
-            console.log(data[i], report, total)
-        }  
-        report += `Total: ${total} cookies`   
+        for(var i=0;i<this.length;i++) {
+            report[i] = Math.round(this.avgCook * (Math.random() * (this.maxCust - this.minCust) + this.minCust));
+            total += report[i];
+        }
+        console.log(report, total);
+        return [report, total];
+       
     },
     render: function(){    
-          var liEl = document.createElement('li');
-          liEl.textContent = this.cookieNumber();
-          ulEl.appendChild(liEl);
-      }
-}
+        var liEl = document.createElement('li');
+        liEl.textContent = '' + this.name;
+        ulEl.appendChild(liEl);
 
-var storeCenter  = {
-=======
-    cookieNumber: function() {
-        return Math.random() * (maxCust - minCust) + minCust;
+        for(var i = 0; i < this.cookieNumber()[0].length; i++) {
+            liEl = document.createElement('li');
+            liEl.textContent = liEl.textContent + `${hours[i]}:  ${this.cookieNumber()[0][i]} cookies` + '\n';
+            ulEl.appendChild(liEl);
+            console.log(liEl.textContent, hours[i], this.cookieNumber()[0][i]);
+        }
+
+        liEl = document.createElement('li');
+        liEl.textContent = liEl.textContent + `Total: ${this.cookieNumber()[1]}`;
+        ulEl.appendChild(liEl); 
     }
 }
 
+
 var storeCenter  = {
-    name: '1st and Pike',
+    name: 'Seattle Center',
     minCust: 11,
     maxCust: 28,
     avgCook: 3.7,
-    data: new Array,
-    length: 16,
+    length: 15,
     cookieNumber: function() {
-        var report = '';
+        var report = [];
         var total = 0;
-        for(i=0;i<length;i++) {
-            data[i] = avgCook * (Math.random() * (maxCust - minCust) + minCust);
-            report += `${i + 6}am: ${data[i]} cookies \n`; 
-            total += data[i];
-            console.log(data[i], report, total)
-        }  
-        report += `Total: ${total} cookies`   
+        for(var i=0;i<this.length;i++) {
+            report[i] = Math.round(this.avgCook * (Math.random() * (this.maxCust - this.minCust) + this.minCust));
+            total += report[i];
+        }
+        console.log(report, total);
+        return [report, total];
+       
     },
     render: function(){    
-          var liEl = document.createElement('li');
-          liEl.textContent = this.cookieNumber();
-          ulEl.appendChild(liEl);
-      }
-}
+        var liEl = document.createElement('li');
+        liEl.textContent = '' + this.name;
+        ulEl.appendChild(liEl);
 
-var storeCapital = {
-    cookieNumber: function() {
-        return Math.random() * (maxCust - minCust) + minCust;
+        for(var i = 0; i < this.cookieNumber()[0].length; i++) {
+            liEl = document.createElement('li');
+            liEl.textContent = liEl.textContent + `${hours[i]}:  ${this.cookieNumber()[0][i]} cookies` + '\n';
+            ulEl.appendChild(liEl);
+            console.log(liEl.textContent, hours[i], this.cookieNumber()[0][i]);
+        }
+
+        liEl = document.createElement('li');
+        liEl.textContent = liEl.textContent + `Total: ${this.cookieNumber()[1]}`;
+        ulEl.appendChild(liEl); 
     }
 }
 
-storeCapitol = {
-    name: '1st and Pike',
+
+var storeCapital = {
+    name: 'Capitol Hill',
     minCust: 20,
     maxCust: 38,
     avgCook: 2.3,
     data: new Array,
-    length: 16,
+    length: 15,
     cookieNumber: function() {
-        var report = '';
+        var report = [];
         var total = 0;
-        for(i=0;i<length;i++) {
-            data[i] = avgCook * (Math.random() * (maxCust - minCust) + minCust);
-            report += `${i + 6}am: ${data[i]} cookies \n`; 
-            total += data[i];
-            console.log(data[i], report, total)
-        }  
-        report += `Total: ${total} cookies`   
+        for(var i=0;i<this.length;i++) {
+            report[i] = Math.round(this.avgCook * (Math.random() * (this.maxCust - this.minCust) + this.minCust));
+            total += report[i];
+        }
+        console.log(report, total);
+        return [report, total];
+       
     },
     render: function(){    
-          var liEl = document.createElement('li');
-          liEl.textContent = this.cookieNumber();
-          ulEl.appendChild(liEl);
-      }
-}
+        var liEl = document.createElement('li');
+        liEl.textContent = '' + this.name;
+        ulEl.appendChild(liEl);
 
-var storeAlki = {
-    cookieNumber: function() {
-        return Math.random() * (maxCust - minCust) + minCust;
+        for(var i = 0; i < this.cookieNumber()[0].length; i++) {
+            liEl = document.createElement('li');
+            liEl.textContent = liEl.textContent + `${hours[i]}:  ${this.cookieNumber()[0][i]} cookies` + '\n';
+            ulEl.appendChild(liEl);
+            console.log(liEl.textContent, hours[i], this.cookieNumber()[0][i]);
+        }
+
+        liEl = document.createElement('li');
+        liEl.textContent = liEl.textContent + `Total: ${this.cookieNumber()[1]}`;
+        ulEl.appendChild(liEl); 
     }
 }
 
-storeALki = {
-    name: '1st and Pike',
+
+var storeAlki = {
+    name: 'Alki',
     minCust: 2,
     maxCust: 16,
     avgCook: 4.6,
-
-    data: new Array,
-    length: 16,
+    length: 15,
     cookieNumber: function() {
-        var report = '';
+        var report = [];
         var total = 0;
-        for(i=0;i<length;i++) {
-            data[i] = avgCook * (Math.random() * (maxCust - minCust) + minCust);
-            report += `${i + 6}am: ${data[i]} cookies \n`; 
-            total += data[i];
-            console.log(data[i], report, total)
-        }  
-        report += `Total: ${total} cookies`   
+        for(var i=0;i<this.length;i++) {
+            report[i] = Math.round(this.avgCook * (Math.random() * (this.maxCust - this.minCust) + this.minCust));
+            total += report[i];
+        }
+        console.log(report, total);
+        return [report, total];
+       
     },
     render: function(){    
-          var liEl = document.createElement('li');
-          liEl.textContent = this.cookieNumber();
-          ulEl.appendChild(liEl);
-      }
+        var liEl = document.createElement('li');
+        liEl.textContent = '' + this.name;
+        ulEl.appendChild(liEl);
+
+        for(var i = 0; i < this.cookieNumber()[0].length; i++) {
+            liEl = document.createElement('li');
+            liEl.textContent = liEl.textContent + `${hours[i]}:  ${this.cookieNumber()[0][i]} cookies` + '\n';
+            ulEl.appendChild(liEl);
+            console.log(liEl.textContent, hours[i], this.cookieNumber()[0][i]);
+        }
+
+        liEl = document.createElement('li');
+        liEl.textContent = liEl.textContent + `Total: ${this.cookieNumber()[1]}`;
+        ulEl.appendChild(liEl); 
+    }
 }
 
 var diffStores = [storePike, storeAirport, storeCenter, storeCapital, storeAlki];
 
 for(var i=0;i<diffStores.length;i++) {
-    diffStores[i].render();       
+    diffStores[i].render();
 }

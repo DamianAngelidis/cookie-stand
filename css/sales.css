@@ -1,0 +1,19 @@
+body {
+    counter-reset: salesList;
+}
+
+ul li {
+    display: list-item;          
+    list-style-type: circle;       
+    list-style-position: inside;
+    margin: 0px 0px 0px 20px;
+    padding: 3px 0px;
+}
+
+ul li:nth-child(17n + 1) {
+    font-size: 16pt;
+    padding: 10px;
+    list-style: none;
+    margin: 0px;
+
+}
