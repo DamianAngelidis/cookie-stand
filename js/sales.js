@@ -119,6 +119,12 @@ formEl.addEventListener('submit', function(e){
   
     new Store(storeName, minCustomer, maxCustomer, cookiePerPerson);
 
+    for(var i = tableBody.rows.length; i > 0;i--) {
+        tableBody.deleteRow(i -1);
+    }
+
+    renderHeader();
+    
     for(var i = 0; i < diffStores.length; i++){
         diffStores[i].render();
     } 
