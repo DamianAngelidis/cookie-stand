@@ -104,25 +104,30 @@ function renderFooter() {
     console.log(thEl.textContent, footer[i])
 }
 
-renderHeader();
-for(var i = 0; i < diffStores.length; i++){
-    diffStores[i].render();
-} 
-renderFooter();
 
-if(formEl) {
+
 formEl.addEventListener('submit', function(e){
     e.preventDefault();
 
     console.log('hi');
   
     var storeName = e.target.storeName.value;
-    var maxCustomer = e.target.maxCustomer.value;
-    var minCustomer = e.target.minCustomer.value;
-    var cookiePerPerson = e.target.cookiePerPerson.value;
+    var maxCustomer = parseInt(e.target.maxCustomer.value);
+    var minCustomer = parseInt(e.target.minCustomer.value);
+    var cookiePerPerson = parseInt(e.target.cookiePerPerson.value);
 
   
     new Store(storeName, minCustomer, maxCustomer, cookiePerPerson);
 
+    for(var i = 0; i < diffStores.length; i++){
+        diffStores[i].render();
+    } 
+    renderFooter();
 })
-}
+
+
+renderHeader();
+for(var i = 0; i < diffStores.length; i++){
+    diffStores[i].render();
+} 
+renderFooter();
