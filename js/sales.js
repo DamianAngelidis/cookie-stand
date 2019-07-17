@@ -77,12 +77,14 @@ function renderHeader() {
 }
 
 function addHourlyCookies() {
+    footer = []
     for(i = 0; i < hours.length - 1; i++) {
         var placeholder = 0
         for(var j = 0; j < diffStores.length; j++) {
             placeholder += diffStores[j].cookiesHourReport[i];
-            // console.log(placeholder);
         }   
+
+        console.log(placeholder);
     footer.push(`${placeholder} cookies`);
     }
 }
@@ -124,7 +126,7 @@ formEl.addEventListener('submit', function(e){
     }
 
     renderHeader();
-    
+
     for(var i = 0; i < diffStores.length; i++){
         diffStores[i].render();
     } 
