@@ -1,3 +1,4 @@
+
 'use strict';
 
 var tableBody = document.getElementById('cookies-sold');
