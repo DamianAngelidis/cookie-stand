@@ -8,11 +8,39 @@
   </head>
   <body>
 
-    <table>
+      <table>
       <tbody id = "cookies-sold"></tbody>
     </table>
 
-    <script src="js/sales.js"></script>
+
+    <form id="newStore">
+      <fieldset>
+        <label>Store's name:</label>
+        <input name="storeName" type="text" />
+  
+        <br />
+  
+        <label>Store's maximum hourly customers:</label>
+        <input name="maxCustomer" type="text" />
+  
+        <br />
+
+        <label>Store's minimum hourly customers:</label>
+        <input name="minCustomer" type="text" />
+  
+        <br />
+
+        <label>Store's average number of cookies sold per customers:</label>
+        <input name="cookiePerPerson" type="text" />
+
+        <br   />
+  
+        <input type="submit" name="submitButton" value="submit" />
+  
+      </fieldset>
+    </form>
     
+    <script src="js/sales.js"></script>
+
   </body>
 </html>
