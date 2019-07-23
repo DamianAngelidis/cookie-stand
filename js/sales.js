@@ -1,4 +1,3 @@
-
 'use strict';
 
 var tableBody = document.getElementById('cookies-sold');
@@ -90,7 +89,7 @@ function addHourlyCookies() {
     }
 }
 
-function renderFooter() {
+function renderFooter() {  
     addHourlyCookies();
     var trEl = document.createElement('tr');
     tableBody.appendChild(trEl);
@@ -122,7 +121,7 @@ formEl.addEventListener('submit', function(e){
   
     new Store(storeName, minCustomer, maxCustomer, cookiePerPerson);
 
-    for(var i = tableBody.rows.length; i > 0;i--) {
+    for(var i = tableBody.rows.length; i > 0; i--) {
         tableBody.deleteRow(i -1);
     }
 
